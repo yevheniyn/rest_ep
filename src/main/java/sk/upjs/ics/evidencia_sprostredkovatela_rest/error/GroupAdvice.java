@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import sk.upjs.ics.evidencia_sprostredkovatela.persistent.GroupNotFoundException;
+//import sk.upjs.ics.evidencia_sprostredkovatela.persistent.GroupNotFoundException;
 
 @ControllerAdvice
 public class GroupAdvice {
@@ -18,13 +18,13 @@ public class GroupAdvice {
 		return new ApiError(HttpStatus.BAD_REQUEST.value(), "Object id should be a number");
 	}
 
-	@ExceptionHandler(GroupNotFoundException.class)
-	@ResponseStatus(HttpStatus.NOT_FOUND)
-	@ResponseBody
-	public ApiError handleGroupNotFoundException(GroupNotFoundException e) {
-		return new ApiError(HttpStatus.NOT_FOUND.value(), "Group with id = " + e.getGroupId() + " not found");
-
-	}
+//	@ExceptionHandler(GroupNotFoundException.class)
+//	@ResponseStatus(HttpStatus.NOT_FOUND)
+//	@ResponseBody
+//	public ApiError handleGroupNotFoundException(GroupNotFoundException e) {
+//		return new ApiError(HttpStatus.NOT_FOUND.value(), "Group with id = " + e.getGroupId() + " not found");
+//	}
+	
 	@ExceptionHandler(HttpMessageNotReadableException.class)
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	@ResponseBody
